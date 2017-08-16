@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano onstart="action(start);" >
+<skin_settings uishowpic="" />
+<skin_settings openautonext="1" />
+<autorotate enabled="true" waittime="1" accel="2" speed="4" horizon="0"/>
+<action name="start">
+delayedcall(autonexttimer,60, autonextscene(););
+loadscene(scene1, null, MERGE);
+playsound(bgmusic, '%SWFPATH%/music/1450105237QTcfUt.mp3',0);set(sound[bgmusic].volume,1);
+</action>
+<textstyle name="DEFAULT" effect="" bordercolor="0xF6F6F6" backgroundcolor="0xFEFEFE" background="True" tppabs="http://www.qsjqj.com/vrpano/vrpano351/True" edge="bottom" blendmode="NORMAL" alpha="0.8" fadeintime="0" fadetime="0" showtime="0.1" noclip="False" yoffset="-3" xoffset="0" textalign="none" origin="cursor" textcolor="0x000000" border="True" italic="False" bold="False" fontsize="12" font="Arial, Helvetica, sans-serif"/>
+<plugin name="soundinterface" url="%SWFPATH%/plugins/soundinterface.swf" alturl="%SWFPATH%/plugins/soundinterface.js" volume="1" preload="true" keep="true" />
+<plugin zorder="2000"  name="backmusic" keep="true" url="%SWFPATH%/plugins/soundonoff.png" align="righttop" x="10" y="10" alpha="1" scale="0.5" onhover="showtext('全局音效开关');" crop="0|0|50|50" onloaded="if(ismobile,set(scale,1));" onclick="pausesoundtoggle(bgmusic); switch(crop, 0|0|50|50, 0|50|50|50);" />
+<layer name="introimage" url="%SWFPATH%introimage.png" alpha="0.8" align="center" onclick="hideintroimage();" keep="true" visible="true" />
+<action name="hideintroimage">if(layer[introimage].enabled,set(layer[introimage].enabled,false);tween(layer[introimage].alpha, 0.0, 0.5, default, removelayer(introimage)););</action>
+<plugin zorder="20000"  name="closeautonext" keep="true" url="%SWFPATH%/autonextclose.png" align="top" x="0" y="10" alpha="1" scale="1" onclick="autonextchange();" />
+<scene name="scene1" scenetitle="阳台" thumburl="%SWFPATH%/images/scene1/thumb.jpg" nowpic="" onstart="thumb_start(1);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="5.91884358916294" fovmin="140" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene1/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene1/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene1/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene1/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene1/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene1/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene1/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene1/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene1/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene1/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene1/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene1/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene1/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene1/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene1/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene1/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene1/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene1/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene1/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot12.png" ath="18.9943661639804" atv="39.2814843101404" onclick="ifnot(device.html5,moveto(18.9943661639804,39.2814843101404,smooth());loadscene(scene3, view.vlookat=2.94313286887057&amp;view.hlookat=96.0937636524689, MERGE,ZOOMBLEND(1,3));,moveto(18.9943661639804,39.2814843101404,smooth());loadscene(scene3, view.hlookat=96.0937636524689, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="18.9943661639804" atv="39.2814843101404" width="35" height="50" html="客厅" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<hotspot name="spot2" devices="all" url="%SWFPATH%/spot/spot8.png" ath="11.3633365631038" atv="15.117829403224" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" framespeed="0.02" frameoff="0" lastframe="99" onclick="ifnot(device.html5,moveto(11.3633365631038,15.117829403224,smooth());loadscene(scene2, view.vlookat=4.67824543164109&amp;view.hlookat=-160.736577894355, MERGE,ZOOMBLEND(1,3));,moveto(11.3633365631038,15.117829403224,smooth());loadscene(scene2, view.hlookat=-160.736577894355, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot2info].visible,true);" onover="set(frameoff,0);hotspot_animate(); " onout="set(frameoff,1); " />
+<hotspot name="spot2info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="11.3633365631038" atv="15.117829403224" width="45" height="50" html="入户餐厅" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot2info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene1,get(plugin[scene1].rote));
+</action>
+<action name="hotspot_animate">
+inc(frame,1,get(lastframe),0);
+mul(ypos,frame,frameheight);
+txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+if(frameoff LT 1,
+delayedcall(get(framespeed), if(loaded, hotspot_animate() ) );
+);
+</action>
+</scene>
+<scene name="scene2" scenetitle="入户" thumburl="%SWFPATH%/images/scene2/thumb.jpg" nowpic="" onstart="thumb_start(2);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene2/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene2/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene2/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene2/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene2/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene2/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene2/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene2/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene2/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene2/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene2/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene2/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene2/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene2/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene2/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene2/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene2/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene2/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene2/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot12.png" ath="7.2530329320108" atv="16.8899033426449" onclick="ifnot(device.html5,moveto(7.2530329320108,16.8899033426449,smooth());loadscene(scene3, view.vlookat=-3.92114104708626&amp;view.hlookat=-85.8785007752186, MERGE,ZOOMBLEND(1,3));,moveto(7.2530329320108,16.8899033426449,smooth());loadscene(scene3, view.hlookat=-85.8785007752186, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="7.2530329320108" atv="16.8899033426449" width="35" height="50" html="客厅" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<hotspot name="spot2" devices="all" url="%SWFPATH%/spot/spot8.png" ath="10.3328358662461" atv="10.2818896666965" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" framespeed="0.02" frameoff="0" lastframe="99" onclick="ifnot(device.html5,moveto(10.3328358662461,10.2818896666965,smooth());loadscene(scene1, view.vlookat=14.0202194610368&amp;view.hlookat=-182.362741085081, MERGE,ZOOMBLEND(1,3));,moveto(10.3328358662461,10.2818896666965,smooth());loadscene(scene1, view.hlookat=-182.362741085081, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot2info].visible,true);" onover="set(frameoff,0);hotspot_animate(); " onout="set(frameoff,1); " />
+<hotspot name="spot2info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="10.3328358662461" atv="10.2818896666965" width="35" height="50" html="阳台" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot2info].visible,false);" />
+<hotspot name="spot3" devices="all" url="%SWFPATH%/spot/spot6.png" ath="-9.86465971510887" atv="22.7458195984613" onclick="ifnot(device.html5,moveto(-9.86465971510887,22.7458195984613,smooth());loadscene(scene4, view.vlookat=1.87829414653753&amp;view.hlookat=22.2549813893195, MERGE,ZOOMBLEND(1,3));,moveto(-9.86465971510887,22.7458195984613,smooth());loadscene(scene4, view.hlookat=22.2549813893195, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot3info].visible,true);" onover="" onout="" />
+<hotspot name="spot3info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-9.86465971510887" atv="22.7458195984613" width="35" height="50" html="主卧" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot3info].visible,false);" />
+<hotspot name="spot4" devices="all" url="%SWFPATH%/spot/spot6.png" ath="-30.4092458640119" atv="3.80781508711226" onclick="ifnot(device.html5,moveto(-30.4092458640119,3.80781508711226,smooth());loadscene(scene7, view.vlookat=5.89387135103196&amp;view.hlookat=-137.05983347547, MERGE,ZOOMBLEND(1,3));,moveto(-30.4092458640119,3.80781508711226,smooth());loadscene(scene7, view.hlookat=-137.05983347547, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot4info].visible,true);" onover="" onout="" />
+<hotspot name="spot4info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-30.4092458640119" atv="3.80781508711226" width="35" height="50" html="书房" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot4info].visible,false);" />
+<hotspot name="spot5" devices="all" url="%SWFPATH%/spot/spot8.png" ath="122.068904144997" atv="31.4801755444549" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" framespeed="0.02" frameoff="0" lastframe="99" onclick="ifnot(device.html5,moveto(122.068904144997,31.4801755444549,smooth());loadscene(scene6, view.vlookat=4.52172880006708&amp;view.hlookat=-38.1233552383081, MERGE,ZOOMBLEND(1,3));,moveto(122.068904144997,31.4801755444549,smooth());loadscene(scene6, view.hlookat=-38.1233552383081, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot5info].visible,true);" onover="set(frameoff,0);hotspot_animate(); " onout="set(frameoff,1); " />
+<hotspot name="spot5info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="122.068904144997" atv="31.4801755444549" width="35" height="50" html="次卧" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot5info].visible,false);" />
+<hotspot name="spot6" devices="all" url="%SWFPATH%/spot/spot8.png" ath="-117.765825158445" atv="19.8609061629784" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" framespeed="0.02" frameoff="0" lastframe="99" onclick="ifnot(device.html5,moveto(-117.765825158445,19.8609061629784,smooth());loadscene(scene8, view.vlookat=6.90024118239461&amp;view.hlookat=149.695007180016, MERGE,ZOOMBLEND(1,3));,moveto(-117.765825158445,19.8609061629784,smooth());loadscene(scene8, view.hlookat=149.695007180016, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot6info].visible,true);" onover="set(frameoff,0);hotspot_animate(); " onout="set(frameoff,1); " />
+<hotspot name="spot6info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-117.765825158445" atv="19.8609061629784" width="35" height="50" html="餐厅" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot6info].visible,false);" />
+<hotspot name="spot7" devices="all" url="%SWFPATH%/spot/spot8.png" ath="-110.063767324708" atv="15.0004654856756" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" framespeed="0.02" frameoff="0" lastframe="99" onclick="ifnot(device.html5,moveto(-110.063767324708,15.0004654856756,smooth());loadscene(scene9, view.vlookat=1.99780105135112&amp;view.hlookat=64.1654071725297, MERGE,ZOOMBLEND(1,3));,moveto(-110.063767324708,15.0004654856756,smooth());loadscene(scene9, view.hlookat=64.1654071725297, MERGE,ZOOMBLEND(1,3)););" onhover="showtext('厨房');" onover="set(frameoff,0);hotspot_animate(); " onout="set(frameoff,1); " />
+<hotspot name="spot8" devices="all" url="%SWFPATH%/spot/spot7.png" ath="41.9368248925696" atv="5.87544405862479" onclick="ifnot(device.html5,moveto(41.9368248925696,5.87544405862479,smooth());loadscene(scene10, view.vlookat=0.473145191625537&amp;view.hlookat=-29.7607513203443, MERGE,ZOOMBLEND(1,3));,moveto(41.9368248925696,5.87544405862479,smooth());loadscene(scene10, view.hlookat=-29.7607513203443, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot8info].visible,true);" onover="" onout="" />
+<hotspot name="spot8info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="41.9368248925696" atv="5.87544405862479" width="35" height="50" html="卫生间" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot8info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene2,get(plugin[scene2].rote));
+</action>
+<action name="hotspot_animate">
+inc(frame,1,get(lastframe),0);
+mul(ypos,frame,frameheight);
+txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+if(frameoff LT 1,
+delayedcall(get(framespeed), if(loaded, hotspot_animate() ) );
+);
+</action>
+</scene>
+<scene name="scene3" scenetitle="客厅" thumburl="%SWFPATH%/images/scene3/thumb.jpg" nowpic="" onstart="thumb_start(3);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="120" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene3/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene3/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene3/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene3/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene3/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene3/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene3/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene3/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene3/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene3/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene3/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene3/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene3/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene3/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene3/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene3/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene3/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene3/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene3/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot8.png" ath="-99.7529098669867" atv="35.4684373657207" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" framespeed="0.02" frameoff="0" lastframe="99" onclick="ifnot(device.html5,moveto(-99.7529098669867,35.4684373657207,smooth());loadscene(scene1, view.vlookat=13.3112488242951&amp;view.hlookat=-184.48330474755, MERGE,ZOOMBLEND(1,3));,moveto(-99.7529098669867,35.4684373657207,smooth());loadscene(scene1, view.hlookat=-184.48330474755, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="set(frameoff,0);hotspot_animate(); " onout="set(frameoff,1); " />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-99.7529098669867" atv="35.4684373657207" width="35" height="50" html="阳台" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<hotspot name="spot2" devices="all" url="%SWFPATH%/spot/spot8.png" ath="77.0252035710999" atv="14.559452920944" crop="0|0|50|50" framewidth="50" frameheight="50" frame="0" framespeed="0.02" frameoff="0" lastframe="99" onclick="ifnot(device.html5,moveto(77.0252035710999,14.559452920944,smooth());loadscene(scene2, view.vlookat=0.796563856259164&amp;view.hlookat=212.241312322497, MERGE,ZOOMBLEND(1,3));,moveto(77.0252035710999,14.559452920944,smooth());loadscene(scene2, view.hlookat=212.241312322497, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot2info].visible,true);" onover="set(frameoff,0);hotspot_animate(); " onout="set(frameoff,1); " />
+<hotspot name="spot2info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="77.0252035710999" atv="14.559452920944" width="45" height="50" html="入户餐厅" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot2info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene3,get(plugin[scene3].rote));
+</action>
+<action name="hotspot_animate">
+inc(frame,1,get(lastframe),0);
+mul(ypos,frame,frameheight);
+txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+if(frameoff LT 1,
+delayedcall(get(framespeed), if(loaded, hotspot_animate() ) );
+);
+</action>
+</scene>
+<scene name="scene4" scenetitle="主卧室" thumburl="%SWFPATH%/images/scene4/thumb.jpg" nowpic="" onstart="thumb_start(4);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene4/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene4/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene4/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene4/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene4/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene4/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene4/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene4/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene4/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene4/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene4/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene4/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene4/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene4/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene4/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene4/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene4/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene4/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene4/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot3.png" ath="-104.92806573708" atv="25.4039736600484" onclick="ifnot(device.html5,moveto(-104.92806573708,25.4039736600484,smooth());loadscene(scene2, view.vlookat=6.2270759056773&amp;view.hlookat=143.730755194212, MERGE,ZOOMBLEND(1,3));,moveto(-104.92806573708,25.4039736600484,smooth());loadscene(scene2, view.hlookat=143.730755194212, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-104.92806573708" atv="25.4039736600484" width="35" height="50" html="走廊" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<hotspot name="spot2" devices="all" url="%SWFPATH%/spot/spot12.png" ath="59.2972347546413" atv="33.6778702258429" onclick="ifnot(device.html5,moveto(59.2972347546413,33.6778702258429,smooth());loadscene(scene5, view.vlookat=-5.16062595060981&amp;view.hlookat=168.951568053714, MERGE,ZOOMBLEND(1,3));,moveto(59.2972347546413,33.6778702258429,smooth());loadscene(scene5, view.hlookat=168.951568053714, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot2info].visible,true);" onover="" onout="" />
+<hotspot name="spot2info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="59.2972347546413" atv="33.6778702258429" width="45" height="50" html="卧室阳台" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot2info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene4,get(plugin[scene4].rote));
+</action>
+</scene>
+<scene name="scene5" scenetitle="主卧阳台" thumburl="%SWFPATH%/images/scene5/thumb.jpg" nowpic="" onstart="thumb_start(5);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene5/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene5/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene5/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene5/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene5/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene5/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene5/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene5/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene5/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene5/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene5/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene5/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene5/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene5/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene5/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene5/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene5/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene5/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene5/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot3.png" ath="-37.6899555424834" atv="16.6310656050979" onclick="ifnot(device.html5,moveto(-37.6899555424834,16.6310656050979,smooth());loadscene(scene2, view.vlookat=27.6934055480952&amp;view.hlookat=120.365433112405, MERGE,ZOOMBLEND(1,3));,moveto(-37.6899555424834,16.6310656050979,smooth());loadscene(scene2, view.hlookat=120.365433112405, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-37.6899555424834" atv="16.6310656050979" width="35" height="50" html="走廊" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<hotspot name="spot2" devices="all" url="%SWFPATH%/spot/spot12.png" ath="-46.295747003059" atv="23.930218481094" onclick="ifnot(device.html5,moveto(-46.295747003059,23.930218481094,smooth());loadscene(scene4, view.vlookat=10.0357725193032&amp;view.hlookat=-88.4932173394413, MERGE,ZOOMBLEND(1,1));,moveto(-46.295747003059,23.930218481094,smooth());loadscene(scene4, view.hlookat=-88.4932173394413, MERGE,ZOOMBLEND(1,1)););" onhover="set(hotspot[spot2info].visible,true);" onover="" onout="" />
+<hotspot name="spot2info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-46.295747003059" atv="23.930218481094" width="35" height="50" html="主卧" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot2info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene5,get(plugin[scene5].rote));
+</action>
+</scene>
+<scene name="scene6" scenetitle="次卧" thumburl="%SWFPATH%/images/scene6/thumb.jpg" nowpic="" onstart="thumb_start(6);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene6/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene6/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene6/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene6/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene6/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene6/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene6/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene6/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene6/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene6/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene6/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene6/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene6/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene6/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene6/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene6/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene6/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene6/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene6/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot2.png" ath="51.419553982246" atv="27.3503453055644" onclick="ifnot(device.html5,moveto(51.419553982246,27.3503453055644,smooth());loadscene(scene2, view.vlookat=5.79706083542194&amp;view.hlookat=-109.590336729639, MERGE,ZOOMBLEND(1,3));,moveto(51.419553982246,27.3503453055644,smooth());loadscene(scene2, view.hlookat=-109.590336729639, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="51.419553982246" atv="27.3503453055644" width="35" height="50" html="走廊" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene6,get(plugin[scene6].rote));
+</action>
+</scene>
+<scene name="scene7" scenetitle="书房" thumburl="%SWFPATH%/images/scene7/thumb.jpg" nowpic="" onstart="thumb_start(7);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene7/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene7/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene7/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene7/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene7/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene7/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene7/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene7/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene7/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene7/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene7/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene7/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene7/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene7/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene7/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene7/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene7/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene7/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene7/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot12.png" ath="158.92194427989" atv="25.1739691021015" onclick="ifnot(device.html5,moveto(158.92194427989,25.1739691021015,smooth());loadscene(scene2, view.vlookat=-1.58147934123976&amp;view.hlookat=72.1631164566554, MERGE,ZOOMBLEND(1,3));,moveto(158.92194427989,25.1739691021015,smooth());loadscene(scene2, view.hlookat=72.1631164566554, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="158.92194427989" atv="25.1739691021015" width="35" height="50" html="走廊" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene7,get(plugin[scene7].rote));
+</action>
+</scene>
+<scene name="scene8" scenetitle="餐厅" thumburl="%SWFPATH%/images/scene8/thumb.jpg" nowpic="" onstart="thumb_start(8);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene8/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene8/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene8/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene8/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene8/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene8/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene8/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene8/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene8/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene8/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene8/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene8/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene8/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene8/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene8/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene8/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene8/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene8/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene8/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot12.png" ath="-33.7992056640555" atv="22.8679484258668" onclick="ifnot(device.html5,moveto(-33.7992056640555,22.8679484258668,smooth());loadscene(scene2, view.vlookat=4.95595118852924&amp;view.hlookat=14.5524548906684, MERGE,ZOOMBLEND(1,3));,moveto(-33.7992056640555,22.8679484258668,smooth());loadscene(scene2, view.hlookat=14.5524548906684, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-33.7992056640555" atv="22.8679484258668" width="35" height="50" html="走廊" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene8,get(plugin[scene8].rote));
+</action>
+</scene>
+<scene name="scene9" scenetitle="厨房" thumburl="%SWFPATH%/images/scene9/thumb.jpg" nowpic="" onstart="thumb_start(9);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene9/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene9/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene9/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene9/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene9/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene9/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene9/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene9/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene9/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene9/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene9/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene9/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene9/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene9/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene9/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene9/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene9/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene9/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene9/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot12.png" ath="-126.255656895879" atv="15.2998579166281" onclick="ifnot(device.html5,moveto(-126.255656895879,15.2998579166281,smooth());loadscene(scene2, view.vlookat=-1.56598494548734&amp;view.hlookat=41.2420081268514, MERGE,ZOOMBLEND(1,3));,moveto(-126.255656895879,15.2998579166281,smooth());loadscene(scene2, view.hlookat=41.2420081268514, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-126.255656895879" atv="15.2998579166281" width="35" height="50" html="走廊" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<hotspot name="spot2" devices="all" url="%SWFPATH%/spot/spot12.png" ath="-113.779578248428" atv="35.4614907800803" onclick="ifnot(device.html5,moveto(-113.779578248428,35.4614907800803,smooth());loadscene(scene8, view.vlookat=10.4324171614543&amp;view.hlookat=22.4889544566907, MERGE,ZOOMBLEND(1,3));,moveto(-113.779578248428,35.4614907800803,smooth());loadscene(scene8, view.hlookat=22.4889544566907, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot2info].visible,true);" onover="" onout="" />
+<hotspot name="spot2info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="-113.779578248428" atv="35.4614907800803" width="35" height="50" html="餐厅" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot2info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene9,get(plugin[scene9].rote));
+</action>
+</scene>
+<scene name="scene10" scenetitle="卫生间" thumburl="%SWFPATH%/images/scene10/thumb.jpg" nowpic="" onstart="thumb_start(10);action(startscene);set(control.mousetype, moveto);" >
+<events onviewchange="if(view.vlookat GT 90,set(view.vlookat,90););if(view.vlookat LT -90,set(view.vlookat,-90););" /><view fovtype="MFOV" fov="100" hlookat="0" fovmin="80" fovmax="160" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" />
+<preview url="%SWFPATH%/images/scene10/preview.jpg" />
+<image type="CUBE"  progressive="false">
+<left url="%SWFPATH%/images/scene10/pano_left.jpg" />
+<front url="%SWFPATH%/images/scene10/pano_front.jpg" />
+<right url="%SWFPATH%/images/scene10/pano_right.jpg" />
+<back url="%SWFPATH%/images/scene10/pano_back.jpg" />
+<up url="%SWFPATH%/images/scene10/pano_up.jpg" />
+<down url="%SWFPATH%/images/scene10/pano_down.jpg" />
+<mobile>
+<left url="%SWFPATH%/images/scene10/mb_left.jpg" />
+<front url="%SWFPATH%/images/scene10/mb_front.jpg" />
+<right url="%SWFPATH%/images/scene10/mb_right.jpg" />
+<back url="%SWFPATH%/images/scene10/mb_back.jpg" />
+<up url="%SWFPATH%/images/scene10/mb_up.jpg" />
+<down url="%SWFPATH%/images/scene10/mb_down.jpg" />
+</mobile>
+<tablet>
+<left url="%SWFPATH%/images/scene10/tb_left.jpg" />
+<front url="%SWFPATH%/images/scene10/tb_front.jpg" />
+<right url="%SWFPATH%/images/scene10/tb_right.jpg" />
+<back url="%SWFPATH%/images/scene10/tb_back.jpg" />
+<up url="%SWFPATH%/images/scene10/tb_up.jpg" />
+<down url="%SWFPATH%/images/scene10/tb_down.jpg" />
+</tablet>
+</image>
+<hotspot name="spot1" devices="all" url="%SWFPATH%/spot/spot12.png" ath="176.384415574128" atv="30.623396964012" onclick="ifnot(device.html5,moveto(176.384415574128,30.623396964012,smooth());loadscene(scene2, view.vlookat=17.661001531261&amp;view.hlookat=-133.332965835859, MERGE,ZOOMBLEND(1,3));,moveto(176.384415574128,30.623396964012,smooth());loadscene(scene2, view.hlookat=-133.332965835859, MERGE,ZOOMBLEND(1,3)););" onhover="set(hotspot[spot1info].visible,true);" onover="" onout="" />
+<hotspot name="spot1info" devices="all" url="%SWFPATH%/plugins/textfield.swf" ath="176.384415574128" atv="30.623396964012" width="35" height="50" html="走廊" css="color:#333333; font-family:微软雅黑; font-size:14px; line-height:28px;" textshadow="0" visible="false" enabled="true" background="true-1" tppabs="http://www.qsjqj.com/vrpano/vrpano351/true" backgroundcolor="0xFFFFFF" backgroundalpha="0.5" border="true" ox="20" oy="-40" bordercolor="0xFFFFFF" borderalpha="0.5" borderwidth="5.0" roundedge="5" shadow="2" shadowrange="2.0" shadowangle="45" shadowcolor="0x000000" shadowalpha="0.5" autoheight="true" align="left" edge="left" onout="set(hotspot[spot1info].visible,false);" />
+<action name="startscene">
+action(activatespot,scene10,get(plugin[scene10].rote));
+</action>
+</scene>
+<contextmenu fullscreen="true" enterfs="全屏" exitfs="退出全屏">
+<item caption="旋转开启/暂停" onclick="action(autogochange);" separator="true" />
+<item caption="自动切换开启/暂停" onclick="action(autonextchange);"/>
+</contextmenu>
+<plugin name="map" url="%SWFPATH%/map/1450105391RvrPkl.jpg" keep="true" align="lefttop" x="0"  y="0" handcursor="false" scalechildren="true" width="200" height="152.8" onover="tween(alpha,1);" onout="tween(alpha,0.3);" alpha="0.3" onclick="action(openmap);" />
+<plugin name="scene1" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="270.105726115639" zorder="2" onclick="loadscene(scene1, null, MERGE, BLEND(1));" x="274"  y="300" onhover="showtext('阳台');" />
+<plugin name="scene2" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="89.9292117185371" zorder="2" onclick="loadscene(scene2, null, MERGE, BLEND(1));" x="314"  y="127" onhover="showtext('入户');" />
+<plugin name="scene3" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="198.691908359727" zorder="2" onclick="loadscene(scene3, null, MERGE, BLEND(1));" x="282"  y="247" onhover="showtext('客厅');" />
+<plugin name="scene4" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="-11.4738642962007" zorder="2" onclick="loadscene(scene4, null, MERGE, BLEND(1));" x="362"  y="267" onhover="showtext('主卧室');" />
+<plugin name="scene5" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="278.934664819918" zorder="2" onclick="loadscene(scene5, null, MERGE, BLEND(1));" x="397"  y="314" onhover="showtext('主卧阳台');" />
+<plugin name="scene6" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="318.315895380257" zorder="2" onclick="loadscene(scene6, null, MERGE, BLEND(1));" x="50"  y="101" onhover="showtext('次卧');" />
+<plugin name="scene7" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="28.269699513375" zorder="2" onclick="loadscene(scene7, null, MERGE, BLEND(1));" x="388"  y="150" onhover="showtext('书房');" />
+<plugin name="scene8" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="188.880062611305" zorder="2" onclick="loadscene(scene8, null, MERGE, BLEND(1));" x="394"  y="92" onhover="showtext('餐厅');" />
+<plugin name="scene9" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="287.381920583413" zorder="2" onclick="loadscene(scene9, null, MERGE, BLEND(1));" x="431"  y="84" onhover="showtext('厨房');" />
+<plugin name="scene10" url="%SWFPATH%/map/mappoint.png" keep="true" parent="map" align="lefttop" edge="center" rote="156.484246975754" zorder="2" onclick="loadscene(scene10, null, MERGE, BLEND(1));" x="264"  y="146" onhover="showtext('卫生间');" />
+<plugin name="activespot" url="%SWFPATH%/map/mappointactive.png" keep="true" align="center" edge="center" visible="false" zorder="3" />
+<plugin name="radar" url="%SWFPATH%/plugins/radar.swf" alturl="%SWFPATH%/plugins/radar.js" zorder="1" keep="true" heading="0" parent="map" align="lefttop" edge="center" x="0" y="0" linecolor="0" fillcolor="0xFF0000" scale="0.8" visible="false" />
+<action name="openmap">
+set(onclick,action(closemap););
+set(onover,);
+set(onout,);
+set(x,0);
+set(y,0);
+set(align,center);
+tween(width,500,distance(500,0.1),easeoutquad);
+tween(height,382,distance(382,0.1),easeoutquad);
+tween(alpha,1);
+</action>
+<action name="closemap">
+set(onclick,action(openmap););
+set(onover,tween(alpha,1););
+set(onout,tween(alpha,0.3););
+tween(alpha,0.3);
+set(x,0);
+set(y,0);
+set(align,lefttop);
+tween(width,200,distance(500,0.1),easeoutquad);
+tween(height,152.8,distance(382,0.1),easeoutquad);
+</action>
+<action name="activatespot">
+set(plugin[activespot].parent, plugin[%1]);
+set(plugin[activespot].visible, true);
+copy(plugin[radar].x, plugin[%1].x);
+copy(plugin[radar].y, plugin[%1].y);
+set(plugin[radar].visible, true);
+set(plugin[radar].heading, %2);
+</action>
+<include url="%SWFPATH%/thumb/thumb.xml" />
+<action name="prevscene">
+		copy(sceneindex, scene[get(xml.scene)].index);
+		sub(lastindex, scene.count, 1);
+		dec(sceneindex, 1, 0, get(lastindex));
+		loadscene(get(scene[get(sceneindex)].name), null, MERGE, BLEND(0.5));
+	</action>
+	
+	<action name="nextscene">
+		copy(sceneindex, scene[get(xml.scene)].index);
+		sub(lastindex, scene.count, 1);
+		inc(sceneindex, 1, get(lastindex), 0);
+		loadscene(get(scene[get(sceneindex)].name), null, MERGE, BLEND(0.5));
+	</action>
+<action name="autonextscene">
+    if(skin_settings.openautonext == 1,
+        nextscene();
+        delayedcall(autonexttimer,60, autonextscene();
+        );
+    );
+    </action>
+    <action name="autonextchange">
+    if(skin_settings.openautonext == 0,
+        set(skin_settings.openautonext,1);
+        set(autorotate.enabled,true);
+        delayedcall(autonexttimer,60, autonextscene(););
+        ,
+        set(skin_settings.openautonext,0);
+        stopdelayedcall(autonexttimer);
+        set(plugin[closeautonext].visible,false);
+    );
+    </action>
+    <action name="autogochange">
+    if(autorotate.enabled == true,
+    set(autorotate.enabled,false);,set(autorotate.enabled,true);
+    );
+    </action>
+    
+<action name="flyout">
+copy(backup_rx,rx);copy(backup_ry,ry);copy(backup_rz,rz);copy(backup_scale,scale);copy(backup_directionalsound,directionalsound);copy(backup_zorder,zorder);
+tween(rx, 0);tween(ry, 0);tween(rz, 0);tween(scale, 1.3);tween(flying, 1.0);set(directionalsound,false);set(zorder,100)
+</action>
+<action name="flyback">
+tween(rx, get(backup_rx));tween(ry, get(backup_ry));tween(rz, get(backup_rz));
+tween(scale, get(backup_scale));tween(flying, 0.0);set(directionalsound,get(backup_directionalsound));set(zorder,get(backup_zorder));
+</action>
+</krpano>
