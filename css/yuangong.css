@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.product-list:hover,
+.product-list:focus {
+    /*border: 3px solid #DBDBDB;*/
+    box-shadow: 0px 0px 20px rgba(144, 198, 234, 0.8);
+    transition-duration: 0.5s;
+}
+.product-list {
+    border: 1px solid #E8E8E8;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 10px;
+    height: 600px;
+    overflow: hidden;
+    /*width: 400px;*/
+    margin: 10px 0;
+}
+.product-list img {
+    /*background: #F3F9E7;*/
+    max-height: 400px;
+    max-width: 560px;
+    overflow: hidden;
+}
+.product-list .product_cont {
+    background: #FFFFFF;
+    font-family: "微软雅黑", "microsoft yahei";
+}
+.product-list .product_cont h3 {
+    line-height: 1.5;
+    padding-top: 5%;
+    font-size: 22px;
+    color: #6a747b;
+    font-weight: 500;
+}
+.product-list .product_cont h6 {
+    padding-top: 5%;
+    font-size: 16px;
+    line-height: 2;
+    color: #6a747b;
+}

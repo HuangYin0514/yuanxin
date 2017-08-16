@@ -1,0 +1,453 @@
+.standard.design {
+    margin-top: 108px;
+}
+.standard {
+    position: relative;
+    min-height: 481px;
+}
+
+.gj_container {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.gj_container, .page {
+    position: relative;
+}
+
+.clearfix::after, .clearfix::before {
+
+    display: table;
+    line-height: 0;
+    content: "";
+
+}
+.clearfix::after, .slick-track::after {
+
+    clear: both;
+
+}
+.standard.design .mask {
+    top: -16px;
+    left: 253px;
+}
+.standard .mask {
+    position: absolute;
+    width: 425px;
+    height: 481px;
+    background: #fafafa;
+    opacity: 0;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+.standard.design .demo {
+    right: -298px;
+    opacity: 1;
+/*    -webkit-transform: translate(0,0);
+    transform: translate(0,0);*/
+}
+.standard .demo {
+    position: relative;
+    opacity: 0;
+/*    -webkit-transform: translate(0,40px);
+    transform: translate(0,40px);*/
+}
+.standard.design .demo.overlap .line-art {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition: all 1s .5s cubic-bezier(.25,.1,.25,1);
+    transition: all 1s .5s cubic-bezier(.25,.1,.25,1);
+}
+.standard.design .demo .line-art {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transform: translate(0,20px);
+    transform: translate(0,20px);
+}
+
+.standard.design .demo.overlap .model {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition: all 1.5s 1.5s cubic-bezier(.25,.1,.25,1);
+    transition: all 1.5s 1.5s cubic-bezier(.25,.1,.25,1);
+}
+.standard.design .demo .model {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    -webkit-transform: translate(0,-60px);
+    transform: translate(0,-60px);
+}
+.standard.design .content {
+    top: 33px;
+    left: 75px;
+}
+.standard .content {
+    position: absolute;
+    width: 27.12%;
+}
+.standard.design .v-line {
+    left: 0;
+    bottom: -90px;
+}
+.standard .h-line, .standard .v-line {
+    position: absolute;
+    line-height: 25px;
+    font-size: 14px;
+    color: #999;
+}
+.standard.design .v-line .ln {
+    -webkit-transform: scale(1,0);
+    transform: scale(1,0);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+}
+.standard .v-line .ln {
+    width: 1px;
+    height: 350px;
+    background: #c2c2c2;
+    opacity: 0;
+}
+.standard.design .h-line {
+    right: 0;
+    bottom: -100px;
+}
+.standard .h-line, .standard .v-line {
+    position: absolute;
+    line-height: 25px;
+    font-size: 14px;
+    color: #999;
+}
+.standard .title {
+    font-size: 36px;
+    color: #333;
+    opacity: 0;
+    -webkit-transform: translate(0,20%);
+    transform: translate(0,20%);
+}
+.standard .line {
+    width: 80px;
+    margin: 30px 0;
+    border-bottom: 1px solid #979797;
+    opacity: 0;
+    -webkit-transform: translate(0,20px);
+    transform: translate(0,20px);
+}
+.standard .info {
+    line-height: 25px;
+    font-size: 14px;
+    text-align: justify;
+    color: #666;
+    opacity: 0;
+    -webkit-transform: translate(0,20%);
+    transform: translate(0,20%);
+}
+.standard .more-link {
+    margin-top: 50px;
+    opacity: 0;
+    -webkit-transform: translate(0,100%);
+    transform: translate(0,100%);
+}
+.more-link {
+    display: inline-block;
+    line-height: 25px;
+    padding-right: 40px;
+    font-size: 14px;
+    color: #333;
+    background-image: url(../img/index/sprite-index.png);
+    background-repeat: no-repeat;
+    background-position: -195px -63px;
+}
+
+/*够家结构*/
+.standard.construct .ly1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    float: left;
+}
+.standard.construct .layer {
+    position: absolute;
+    top: 7px;
+    left: 44px;
+    -webkit-transition: top .4s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition: top .4s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition: transform 1.2s .5s cubic-bezier(.25,.1,.25,1),top .4s cubic-bezier(.25,.1,.25,1);
+    transition: transform 1.2s .5s cubic-bezier(.25,.1,.25,1),top .4s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+}
+.standard.construct .layer > img {
+    -webkit-transition: -webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition: -webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition: transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition: transform 1.2s .5s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+}
+.standard.construct .layer .layer-info {
+    position: absolute;
+    top: -5%;
+    left: 90%;
+    width: 115px;
+    height: 70px;
+    font-size: 12px;
+    text-align: right;
+    color: #666;
+    background: url(../img/index/sprite-index.png) -178px 8px no-repeat;
+    opacity: 0;
+    -webkit-transition: all .4s cubic-bezier(.25,.1,.25,1);
+    transition: all .4s cubic-bezier(.25,.1,.25,1);
+}
+
+.standard.construct .layer-info .dot::after {
+    content: " ";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 6px;
+    height: 6px;
+    background: rgba(0,0,0,.51);
+    border-radius: 50%;
+}
+.standard.construct .layer-info .dot {
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    background: rgba(0,0,0,.2);
+    border-radius: 50%;
+}
+.standard.construct .layer-info .text {
+    width: 80px;
+    float: right;
+    text-align: center;
+}
+.standard.construct {
+    margin-top:148px
+}
+.standard.construct .mask {
+    top:32px;
+    right:253px
+}
+.standard.construct .content {
+    top:85px;
+    right:75px
+}
+.standard.construct .h-line {
+    left:0;
+    bottom:-130px
+}
+.standard.construct .h-line .ln {
+    -webkit-transform:scale(0,1);
+    transform:scale(0,1);
+    -webkit-transform-origin:left;
+    transform-origin:left
+}
+.standard.construct .v-line {
+    right:0;
+    bottom:-120px
+}
+.standard.construct .v-line .ln {
+    -webkit-transform:scale(1,0);
+    transform:scale(1,0);
+    -webkit-transform-origin:top;
+    transform-origin:top
+}
+.standard.construct .layer {
+    position:absolute;
+    top:7px;
+    left:44px;
+    -webkit-transition:top .4s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition:top .4s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition:transform 1.2s .5s cubic-bezier(.25,.1,.25,1),top .4s cubic-bezier(.25,.1,.25,1);
+    transition:transform 1.2s .5s cubic-bezier(.25,.1,.25,1),top .4s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1)
+}
+.standard.construct .ly1 {
+    position:relative;
+    top:0;
+    left:0;
+    float:left
+}
+.standard.construct .ly4 {
+    left:49px
+}
+.standard.construct .ly5 {
+    top:8px;
+    left:55px
+}
+.standard.construct .ly6 {
+    top:8px;
+    left:57px
+}
+.standard.construct .ly7 {
+    top:9px;
+    left:61px
+}
+.standard.construct .ly8 {
+    top:9px;
+    left:65px
+}
+.standard.construct .layer>img {
+    -webkit-transition:-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition:-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition:transform 1.2s .5s cubic-bezier(.25,.1,.25,1);
+    transition:transform 1.2s .5s cubic-bezier(.25,.1,.25,1),-webkit-transform 1.2s .5s cubic-bezier(.25,.1,.25,1)
+}
+.standard.construct .layer .layer-info {
+    position:absolute;
+    top:-5%;
+    left:90%;
+    width:115px;
+    height:70px;
+    font-size:12px;
+    text-align:right;
+    color:#666;
+    background:url(../img/index/sprite-index.png) -178px 8px no-repeat;
+    opacity:0;
+    -webkit-transition:all .4s cubic-bezier(.25,.1,.25,1);
+    transition:all .4s cubic-bezier(.25,.1,.25,1)
+}
+.standard.construct .layer-info .dot {
+    position:absolute;
+    bottom:0;
+    left:-6px;
+    width:10px;
+    height:10px;
+    background:rgba(0,0,0,.2);
+    border-radius:50%
+}
+.standard.construct .layer-info .dot:after {
+    content:" ";
+    position:absolute;
+    top:2px;
+    left:2px;
+    width:6px;
+    height:6px;
+    background:rgba(0,0,0,.51);
+    border-radius:50%
+}
+.standard.construct .layer-info .text {
+    width:80px;
+    float:right;
+    text-align:center
+}
+.standard.construct .expand .ly2 {
+    -webkit-transform:translate(60px,0);
+    transform:translate(60px,0)
+}
+.standard.construct .expand .ly2>img {
+    -webkit-transform:scale(.95,.95);
+    transform:scale(.95,.95)
+}
+.standard.construct .expand .ly2 .layer-info {
+    top:-3%;
+    left:85%
+}
+.standard.construct .expand .ly3 {
+    -webkit-transform:translate(130px,0);
+    transform:translate(130px,0)
+}
+.standard.construct .expand .ly3>img {
+    -webkit-transform:scale(.9,.9);
+    transform:scale(.9,.9)
+}
+.standard.construct .expand .ly3 .layer-info {
+    top:-2%;
+    left:85%
+}
+.standard.construct .expand .ly4 {
+    -webkit-transform:translate(200px,0);
+    transform:translate(200px,0)
+}
+.standard.construct .expand .ly4>img {
+    -webkit-transform:scale(.85,.85);
+    transform:scale(.85,.85)
+}
+.standard.construct .expand .ly4 .layer-info {
+    top:1%;
+    left:83%
+}
+.standard.construct .expand .ly5 {
+    -webkit-transform:translate(270px,0);
+    transform:translate(270px,0)
+}
+.standard.construct .expand .ly5>img {
+    -webkit-transform:scale(.8,.8);
+    transform:scale(.8,.8)
+}
+.standard.construct .expand .ly5 .layer-info {
+    top:3%;
+    left:81%
+}
+.standard.construct .expand .ly6 {
+    -webkit-transform:translate(340px,0);
+    transform:translate(340px,0)
+}
+.standard.construct .expand .ly6>img {
+    -webkit-transform:scale(.75,.75);
+    transform:scale(.75,.75)
+}
+.standard.construct .expand .ly6 .layer-info {
+    top:6%;
+    left:78%
+}
+.standard.construct .expand .ly7 {
+    -webkit-transform:translate(410px,0);
+    transform:translate(410px,0)
+}
+.standard.construct .expand .ly7>img {
+    -webkit-transform:scale(.7,.7);
+    transform:scale(.7,.7)
+}
+.standard.construct .expand .ly7 .layer-info {
+    top:7%;
+    left:77%
+}
+.standard.construct .expand .ly8 {
+    -webkit-transform:translate(480px,0);
+    transform:translate(480px,0)
+}
+.standard.construct .expand .ly8>img {
+    -webkit-transform:scale(.65,.65);
+    transform:scale(.65,.65)
+}
+.standard.construct .expand .ly8 .layer-info {
+    top:9%;
+    left:76%
+}
+.standard.construct .layer:hover {
+    top:-40px
+}
+.standard.construct .layer:hover .layer-info {
+    opacity:1
+}
+/*横线*/
+
+
+.standard .h-line {
+    position: absolute;
+    line-height: 25px;
+    font-size: 14px;
+    color: #999;
+}
+.standard.design .h-line .ln {
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+}
+.standard .h-line .ln {
+    width: 365px;
+    height: 1px;
+    float: right;
+    margin: 14px 10px 0 0;
+    background: #c2c2c2;
+    opacity: 0;
+}
